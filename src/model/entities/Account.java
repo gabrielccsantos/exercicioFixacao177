@@ -34,10 +34,6 @@ public class Account {
     public Double getBalance(){
         return balance;
     }
-
-    public void setBalance(Double balance){
-        this.balance = balance;
-    }
     public Double getWithdrawLimit() {
         return withdrawLimit;
     }
