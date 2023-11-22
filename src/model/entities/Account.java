@@ -47,7 +47,7 @@ public class Account {
     }
 
     public void deposit(Double amount){
-        setBalance(amount);
+        balance += amount;
     }
 
     public void withdraw(Double amount){
