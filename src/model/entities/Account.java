@@ -1,5 +1,7 @@
 package model.entities;
 
+import model.exceptions.BusinessException;
+
 public class Account {
     private Integer number;
     private String holder;
@@ -49,8 +51,11 @@ public class Account {
     }
 
     public void withdraw(Double amount){
-        if(amount > getBalance() || amount > getWithdrawLimit()){
-            throw new RuntimeException();
+        if(amount > getBalance()){
+            throw new BusinessException("Withdraw error: amount exceeds balance");
+        }
+        else if(amount > withdrawLimit){
+            throw  new BusinessException("Withdraw error: amount exceeds withdraw limit");
         }
         balance -= amount;
     }
